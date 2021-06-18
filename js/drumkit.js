@@ -3,36 +3,23 @@ const snare = document.querySelector('.snare')
 const kick = document.querySelector('.kick')
 const hat = document.querySelector('.hat')
 
-document.querySelector('.snare').addEventListener('click', playSnare)
-document.querySelector('.kick').addEventListener('click', playKick)
-document.querySelector('.hat').addEventListener('click', playHat)
 document.addEventListener('keyup', playKit)
 
-function playSnare(){
-    let audio = new Audio("./sounds/snare.wav")
-    audio.play()
-}
-
-function playKick(){
-    let audio = new Audio("./sounds/kick.wav")
-    audio.play()
-}
-
-function playHat(){
-    let audio = new Audio("./sounds/hat.wav")
+function playDrum(file){
+    let audio = new Audio(file)
     audio.play()
 }
 
 function playKit(e){
     switch(e.keyCode) {
         case 50:
-            playSnare()
+            playDrum('./sounds/Snare.wav')
             break
         case 48:
-            playKick()
+            playDrum('./sounds/Kick.wav')
             break
         case 49:
-            playHat()
+            playDrum('./sounds/Hat.wav')
             break     
     }
 }
