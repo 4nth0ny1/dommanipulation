@@ -6,12 +6,11 @@ const hat = document.querySelector('.hat')
 document.querySelector('.snare').addEventListener('click', playSnare)
 document.querySelector('.kick').addEventListener('click', playKick)
 document.querySelector('.hat').addEventListener('click', playHat)
+document.addEventListener('keyup', playKit)
 
 function playSnare(){
-    document.querySelector('.snare').style.backgroundColor = 'red'
     let audio = new Audio("./sounds/snare.wav")
     audio.play()
-    document.querySelector('.snare').style.backgroundColor = 'white'
 }
 
 function playKick(){
@@ -23,3 +22,18 @@ function playHat(){
     let audio = new Audio("./sounds/hat.wav")
     audio.play()
 }
+
+function playKit(e){
+    switch(e.keyCode) {
+        case 50:
+            playSnare()
+            break
+        case 48:
+            playKick()
+            break
+        case 49:
+            playHat()
+            break     
+    }
+}
+
