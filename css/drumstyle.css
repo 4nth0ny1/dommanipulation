@@ -1,5 +1,6 @@
 .drumkit {
   position: relative;
+  background: red;
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
@@ -10,6 +11,8 @@
 }
 
 .drum {
+  background: blue;
+  color: white;
   text-align: center;
   padding: 10px;
   width: 100px;
